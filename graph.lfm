@@ -1,0 +1,170 @@
+object GraphForm: TGraphForm
+  Left = 309
+  Height = 504
+  Top = 168
+  Width = 827
+  HorzScrollBar.Page = 653
+  VertScrollBar.Page = 475
+  Caption = 'Graphics'
+  ClientHeight = 504
+  ClientWidth = 827
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.1.0.0'
+  object Image1: TImage
+    Left = 0
+    Height = 477
+    Top = 27
+    Width = 827
+    Align = alClient
+    AutoSize = True
+    Center = True
+  end
+  object ToolPanel: TPanel
+    Left = 0
+    Height = 27
+    Top = 0
+    Width = 827
+    Align = alTop
+    AutoSize = True
+    ClientHeight = 27
+    ClientWidth = 827
+    ParentFont = False
+    TabOrder = 0
+    object OptionBtn: TButton
+      AnchorSideLeft.Control = ToolPanel
+      AnchorSideTop.Control = ErrorDrop
+      AnchorSideTop.Side = asrCenter
+      Left = 5
+      Height = 22
+      Top = 4
+      Width = 75
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 1
+      Caption = 'Options'
+      OnClick = SetupBtnClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ErrorDrop: TComboBox
+      AnchorSideLeft.Control = OptionBtn
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = FactorDrop
+      AnchorSideTop.Side = asrCenter
+      Left = 84
+      Height = 20
+      Top = 5
+      Width = 184
+      BorderSpacing.Left = 4
+      DropDownCount = 14
+      ItemHeight = 26
+      Items.Strings = (
+        'No Error Bars'
+        'Standard Deviation'
+        'Standard Error'
+        'Variance'
+        'Confidence Intervals'
+      )
+      OnChange = FactorDropChange
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 1
+      Text = '0'
+    end
+    object FactorDrop: TComboBox
+      AnchorSideLeft.Control = ErrorDrop
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ToolPanel
+      Left = 272
+      Height = 20
+      Top = 5
+      Width = 122
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 4
+      DropDownCount = 14
+      ItemHeight = 26
+      Items.Strings = (
+        'AxB'
+        'BxA'
+        'AxC'
+        'CxA'
+        'BxC'
+        'CxB'
+      )
+      OnChange = FactorDropChange
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 2
+      Text = '0'
+    end
+    object Factor3Edit: TSpinEdit
+      AnchorSideLeft.Control = FactorDrop
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = FactorDrop
+      AnchorSideTop.Side = asrCenter
+      Left = 398
+      Height = 22
+      Top = 4
+      Width = 72
+      BorderSpacing.Left = 4
+      MaxValue = 99
+      MinValue = 1
+      OnChange = FactorDropChange
+      ParentFont = False
+      TabOrder = 3
+      Value = 1
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.*.png'
+    Filter = 'PNG|*.png'
+    Options = [ofOverwritePrompt, ofHideReadOnly]
+    left = 32
+    top = 48
+  end
+  object MainMenu1: TMainMenu
+    left = 120
+    top = 88
+    object File1: TMenuItem
+      Caption = 'File'
+      object SaveMenu: TMenuItem
+        Caption = 'Save bitmap'
+        ShortCut = 16467
+        OnClick = SaveBtnClick
+      end
+      object CloseMenu: TMenuItem
+        Caption = 'Close window'
+        ShortCut = 16471
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = 'Edit'
+      object CopyMenu: TMenuItem
+        Caption = 'Copy'
+        ShortCut = 16451
+        OnClick = CopyBtnClick
+      end
+    end
+    object View1: TMenuItem
+      Caption = 'View'
+      object FontMenu: TMenuItem
+        Caption = 'Font'
+        ShortCut = 16454
+        OnClick = FontBtn2Click
+      end
+      object OptionsMenu: TMenuItem
+        Caption = 'Options'
+        ShortCut = 16463
+        OnClick = SetupBtnClick
+      end
+      object RefreshMenu: TMenuItem
+        Caption = 'Refresh graph'
+        ShortCut = 16466
+        Visible = False
+      end
+    end
+  end
+end

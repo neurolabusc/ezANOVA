@@ -1,0 +1,123 @@
+object ResultsForm: TResultsForm
+  Left = 337
+  Height = 628
+  Top = 124
+  Width = 983
+  HorzScrollBar.Page = 699
+  VertScrollBar.Page = 560
+  ActiveControl = DescriptiveGrid
+  Caption = 'Results'
+  ClientHeight = 628
+  ClientWidth = 983
+  Menu = MainMenu1
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.1.0.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 18
+    Top = 610
+    Width = 983
+    Panels = <    
+      item
+        Width = 200
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 610
+    Top = 0
+    Width = 983
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 610
+    ClientWidth = 983
+    TabOrder = 0
+    object Memo1: TMemo
+      Left = 0
+      Height = 355
+      Top = 0
+      Width = 983
+      Align = alClient
+      Font.Height = -12
+      Font.Name = 'Fixedsys'
+      Lines.Strings = (      )
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssBoth
+      TabOrder = 0
+      TabStop = False
+    end
+    object DescriptiveGrid: TStringGrid
+      Left = 0
+      Height = 255
+      Top = 355
+      Width = 983
+      Align = alBottom
+      FixedRows = 4
+      Options = [goFixedVertLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goTabs, goThumbTracking]
+      RowCount = 12
+      TabOrder = 1
+      OnDrawCell = DescriptiveGridDrawCell
+      OnMouseMove = DescriptiveGridMouseMove
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Text files|*.txt'
+    left = 234
+    top = 64
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.*.txt'
+    Filter = 'Text files|*.txt'
+    left = 190
+    top = 80
+  end
+  object MainMenu1: TMainMenu
+    left = 328
+    top = 48
+    object File1: TMenuItem
+      Caption = 'File'
+      object SaveMenu: TMenuItem
+        Caption = 'Save results'
+        ShortCut = 16467
+        OnClick = SaveBtnClick
+      end
+      object CloseMenu: TMenuItem
+        Caption = 'Close window'
+        ShortCut = 16471
+        OnClick = CloseMenuClick
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = 'Edit'
+      object CopyMenu: TMenuItem
+        Caption = 'Copy'
+        ShortCut = 16451
+        OnClick = CopyBtnClick
+      end
+      object CopyResultsMenu: TMenuItem
+        Caption = 'Copy results only'
+        OnClick = CopyResultsMenuClick
+      end
+      object CopyDescriptivesMenu: TMenuItem
+        Caption = 'Copy descriptives only'
+        ShortCut = 16452
+        OnClick = CopyDescriptivesMenuClick
+      end
+    end
+    object View1: TMenuItem
+      Caption = 'View'
+      object GraphMenu: TMenuItem
+        Caption = 'Graph'
+        ShortCut = 16455
+        OnClick = LineGraphBtnClick
+      end
+    end
+  end
+end

@@ -1,0 +1,120 @@
+object AboutForm: TAboutForm
+  Left = 596
+  Height = 182
+  Top = 253
+  Width = 239
+  HorzScrollBar.Page = 238
+  VertScrollBar.Page = 181
+  ActiveControl = OKbtn
+  AutoSize = True
+  BorderStyle = bsDialog
+  BorderWidth = 4
+  Caption = 'About ezANOVA'
+  ClientHeight = 182
+  ClientWidth = 239
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.1.0.0'
+  object Bevel1: TBevel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 8
+    Height = 104
+    Top = 8
+    Width = 225
+    BorderSpacing.Left = 4
+    BorderSpacing.Top = 4
+    Shape = bsFrame
+  end
+  object ProductName: TLabel
+    AnchorSideLeft.Control = Bevel1
+    AnchorSideTop.Control = Bevel1
+    Left = 12
+    Height = 45
+    Top = 12
+    Width = 164
+    BorderSpacing.Left = 4
+    BorderSpacing.Top = 4
+    Caption = 'ezANOVA'
+    Font.Height = -32
+    Font.Name = 'Arial Black'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Author: TLabel
+    AnchorSideLeft.Control = ProductName
+    AnchorSideTop.Control = ProductName
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 13
+    Top = 61
+    Width = 109
+    BorderSpacing.Top = 4
+    Caption = 'author: Chris Rorden'
+    ParentColor = False
+    WordWrap = True
+  end
+  object Version: TLabel
+    AnchorSideLeft.Control = Bevel1
+    AnchorSideTop.Control = Bevel1
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 13
+    Top = 116
+    Width = 75
+    BorderSpacing.Top = 4
+    Caption = 'version: 0.985'
+    ParentColor = False
+    WordWrap = True
+  end
+  object URL: TLabel
+    AnchorSideLeft.Control = ProductName
+    AnchorSideTop.Control = Author
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 13
+    Top = 78
+    Width = 87
+    BorderSpacing.Top = 4
+    Caption = 'www.mricro.com'
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsUnderline]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+    OnClick = URLClick
+  end
+  object OKbtn: TButton
+    AnchorSideTop.Control = Bevel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Bevel1
+    AnchorSideRight.Side = asrBottom
+    Left = 150
+    Height = 28
+    Top = 120
+    Width = 83
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Top = 8
+    BorderSpacing.InnerBorder = 4
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object Widgetset: TLabel
+    AnchorSideLeft.Control = Bevel1
+    AnchorSideTop.Control = Version
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 13
+    Top = 133
+    Width = 54
+    BorderSpacing.Top = 4
+    Caption = 'Widgetset'
+    ParentColor = False
+  end
+end

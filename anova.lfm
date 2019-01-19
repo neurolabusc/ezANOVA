@@ -1,0 +1,417 @@
+object ANOVAForm: TANOVAForm
+  Left = 495
+  Height = 242
+  Top = 198
+  Width = 661
+  HorzScrollBar.Page = 713
+  VertScrollBar.Page = 311
+  ActiveControl = OKBtn
+  AutoSize = True
+  BorderStyle = bsDialog
+  BorderWidth = 6
+  Caption = 'ANOVA Design'
+  ClientHeight = 242
+  ClientWidth = 661
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.1.0.0'
+  object ALabel: TLabel
+    AnchorSideLeft.Control = ARepCheck
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AVal
+    AnchorSideTop.Side = asrCenter
+    Left = 47
+    Height = 13
+    Top = 85
+    Width = 44
+    BorderSpacing.Left = 4
+    Caption = 'Factor A'
+    ParentColor = False
+  end
+  object NameLabel: TLabel
+    AnchorSideLeft.Control = AEdit
+    AnchorSideTop.Control = WithinLabel
+    Left = 163
+    Height = 13
+    Top = 63
+    Width = 30
+    Caption = 'Name'
+    ParentColor = False
+  end
+  object LevelLabel: TLabel
+    AnchorSideLeft.Control = AVal
+    AnchorSideTop.Control = WithinLabel
+    Left = 95
+    Height = 13
+    Top = 63
+    Width = 33
+    Caption = 'Levels'
+    ParentColor = False
+  end
+  object NamesLabel: TLabel
+    AnchorSideLeft.Control = ALevelNames
+    AnchorSideTop.Control = WithinLabel
+    Left = 256
+    Height = 13
+    Top = 63
+    Width = 67
+    Caption = 'Level Names'
+    ParentColor = False
+  end
+  object RowLabel: TLabel
+    AnchorSideLeft.Control = OpenBtn
+    AnchorSideTop.Control = RowEdit
+    AnchorSideTop.Side = asrCenter
+    Left = 10
+    Height = 13
+    Top = 165
+    Width = 179
+    Caption = 'Observations in a condition [rows]'
+    ParentColor = False
+  end
+  object DesignLabel: TLabel
+    AnchorSideLeft.Control = OpenBtn
+    AnchorSideTop.Control = DesignDrop
+    AnchorSideTop.Side = asrCenter
+    Left = 10
+    Height = 13
+    Top = 43
+    Width = 36
+    Caption = 'Design'
+    ParentColor = False
+  end
+  object WithinLabel: TLabel
+    AnchorSideLeft.Control = OpenBtn
+    AnchorSideTop.Control = DesignDrop
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 13
+    Top = 63
+    Width = 33
+    BorderSpacing.Top = 4
+    Caption = 'Within'
+    ParentColor = False
+  end
+  object OKBtn: TButton
+    AnchorSideTop.Control = RowEdit
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 571
+    Height = 30
+    Top = 185
+    Width = 80
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 4
+    BorderSpacing.Right = 4
+    BorderSpacing.InnerBorder = 4
+    Caption = 'OK'
+    ModalResult = 1
+    OnClick = OKBtnClick
+    TabOrder = 0
+  end
+  object CancelBtn: TButton
+    AnchorSideTop.Control = OKBtn
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = OKBtn
+    Left = 487
+    Height = 30
+    Top = 185
+    Width = 80
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 4
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object AVal: TSpinEdit
+    AnchorSideLeft.Control = ALabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = WithinLabel
+    AnchorSideTop.Side = asrBottom
+    Left = 95
+    Height = 19
+    Top = 82
+    Width = 64
+    BorderSpacing.Left = 4
+    BorderSpacing.Top = 6
+    MaxValue = 50
+    MinValue = 2
+    OnChange = AValChange
+    TabOrder = 2
+    Value = 2
+  end
+  object AEdit: TEdit
+    AnchorSideLeft.Control = AVal
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AVal
+    AnchorSideTop.Side = asrCenter
+    Left = 163
+    Height = 19
+    Top = 82
+    Width = 89
+    BorderSpacing.Left = 4
+    TabOrder = 3
+    Text = 'A'
+  end
+  object ALevelNames: TStringGrid
+    AnchorSideLeft.Control = AEdit
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AVal
+    AnchorSideTop.Side = asrCenter
+    Left = 256
+    Height = 22
+    Top = 80
+    Width = 400
+    BorderSpacing.Left = 4
+    FixedCols = 0
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goDrawFocusSelected, goEditing]
+    RowCount = 1
+    TabOrder = 4
+    OnEnter = ALevelNamesEnter
+    OnExit = ALevelNamesExit
+  end
+  object RowEdit: TSpinEdit
+    AnchorSideLeft.Control = RowLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AEdit
+    AnchorSideBottom.Side = asrBottom
+    Left = 193
+    Height = 19
+    Top = 162
+    Width = 64
+    BorderSpacing.Left = 4
+    BorderSpacing.Top = 80
+    MaxValue = 9999
+    MinValue = 2
+    OnChange = CValChange
+    TabOrder = 5
+    Value = 9
+  end
+  object DesignDrop: TComboBox
+    AnchorSideLeft.Control = DesignLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = OpenBtn
+    AnchorSideTop.Side = asrBottom
+    Left = 50
+    Height = 20
+    Top = 39
+    Width = 297
+    BorderSpacing.Left = 4
+    BorderSpacing.Top = 4
+    DropDownCount = 14
+    ItemHeight = 26
+    Items.Strings = (
+      '1 Between Subject Factor'
+      '2 Between Subject Factors'
+      '3 Between Subject Factors'
+      '1 Within Subject Factor'
+      '2 Within Subject Factors'
+      '3 Within Subject Factors'
+      '2 Factors 1 Within, 1 Between'
+      '3 Factors 1 Within, 2 Between'
+      '3 Factors 2 Within, 1 Between'
+    )
+    OnChange = DesignDropChange
+    Style = csDropDownList
+    TabOrder = 6
+    Text = '0'
+  end
+  object ARepCheck: TCheckBox
+    AnchorSideLeft.Control = WithinLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AVal
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = WithinLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 21
+    Height = 18
+    Top = 82
+    Width = 22
+    Anchors = [akTop, akRight]
+    Enabled = False
+    TabOrder = 7
+  end
+  object FactorCPanel: TPanel
+    AnchorSideLeft.Control = ARepCheck
+    AnchorSideTop.Control = FactorBPanel
+    AnchorSideTop.Side = asrBottom
+    Left = 21
+    Height = 20
+    Top = 129
+    Width = 635
+    AutoSize = True
+    BorderSpacing.Top = 4
+    BevelOuter = bvNone
+    ClientHeight = 20
+    ClientWidth = 635
+    TabOrder = 8
+    object CLabel: TLabel
+      AnchorSideLeft.Control = CRepCheck
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = CVal
+      AnchorSideTop.Side = asrCenter
+      Left = 26
+      Height = 13
+      Top = 3
+      Width = 44
+      BorderSpacing.Left = 4
+      Caption = 'Factor C'
+      ParentColor = False
+    end
+    object CVal: TSpinEdit
+      AnchorSideLeft.Control = CLabel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = FactorCPanel
+      Left = 74
+      Height = 19
+      Top = 0
+      Width = 64
+      BorderSpacing.Left = 4
+      MaxValue = 50
+      OnChange = CValChange
+      TabOrder = 0
+    end
+    object CEdit: TEdit
+      AnchorSideLeft.Control = CVal
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = CVal
+      AnchorSideTop.Side = asrCenter
+      Left = 142
+      Height = 19
+      Top = 0
+      Width = 89
+      BorderSpacing.Left = 4
+      TabOrder = 1
+      Text = 'C'
+    end
+    object CRepCheck: TCheckBox
+      AnchorSideLeft.Control = FactorCPanel
+      AnchorSideTop.Control = CVal
+      AnchorSideTop.Side = asrCenter
+      Left = 0
+      Height = 18
+      Top = 0
+      Width = 22
+      Enabled = False
+      TabOrder = 2
+    end
+    object CLevelNames: TStringGrid
+      AnchorSideLeft.Control = CEdit
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = CVal
+      AnchorSideTop.Side = asrCenter
+      Left = 235
+      Height = 22
+      Top = -2
+      Width = 400
+      BorderSpacing.Left = 4
+      FixedCols = 0
+      FixedRows = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goDrawFocusSelected, goEditing, goThumbTracking]
+      RowCount = 1
+      TabOrder = 3
+      OnEnter = CLevelNamesEnter
+      OnExit = CLevelNamesExit
+    end
+  end
+  object FactorBPanel: TPanel
+    AnchorSideLeft.Control = ARepCheck
+    AnchorSideTop.Control = AVal
+    AnchorSideTop.Side = asrBottom
+    Left = 21
+    Height = 20
+    Top = 105
+    Width = 635
+    AutoSize = True
+    BorderSpacing.Top = 4
+    BevelOuter = bvNone
+    ClientHeight = 20
+    ClientWidth = 635
+    TabOrder = 9
+    object BLabel: TLabel
+      AnchorSideLeft.Control = BRepCheck
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = BVal
+      AnchorSideTop.Side = asrCenter
+      Left = 26
+      Height = 13
+      Top = 3
+      Width = 44
+      BorderSpacing.Left = 4
+      Caption = 'Factor B'
+      ParentColor = False
+    end
+    object BVal: TSpinEdit
+      AnchorSideLeft.Control = BLabel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = FactorBPanel
+      Left = 74
+      Height = 19
+      Top = 0
+      Width = 64
+      BorderSpacing.Left = 4
+      MaxValue = 50
+      OnChange = BValChange
+      TabOrder = 0
+    end
+    object BEdit: TEdit
+      AnchorSideLeft.Control = BVal
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = BVal
+      AnchorSideTop.Side = asrCenter
+      Left = 142
+      Height = 19
+      Top = 0
+      Width = 89
+      BorderSpacing.Left = 4
+      TabOrder = 1
+      Text = 'B'
+    end
+    object BLevelNames: TStringGrid
+      AnchorSideLeft.Control = BEdit
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = BVal
+      AnchorSideTop.Side = asrCenter
+      Left = 235
+      Height = 22
+      Top = -2
+      Width = 400
+      BorderSpacing.Left = 4
+      FixedCols = 0
+      FixedRows = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goDrawFocusSelected, goEditing, goThumbTracking]
+      RowCount = 1
+      TabOrder = 2
+      OnEnter = BLevelNamesEnter
+      OnExit = BLevelNamesExit
+    end
+    object BRepCheck: TCheckBox
+      AnchorSideLeft.Control = FactorBPanel
+      AnchorSideTop.Control = BVal
+      AnchorSideTop.Side = asrCenter
+      Left = 0
+      Height = 18
+      Top = 0
+      Width = 22
+      Enabled = False
+      TabOrder = 3
+    end
+  end
+  object OpenBtn: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 10
+    Height = 25
+    Top = 10
+    Width = 248
+    BorderSpacing.Left = 4
+    BorderSpacing.Top = 4
+    Caption = 'Open Existing Dataset'
+    OnClick = OpenBtnClick
+    TabOrder = 10
+  end
+end

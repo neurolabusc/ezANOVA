@@ -1,0 +1,85 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TMainForm','FORMDATA',[
+  'TPF0'#9'TMainForm'#8'MainForm'#4'Left'#3#7#2#6'Height'#3'"'#3#3'Top'#2'z'#5
+  +'Width'#3#248#3#18'HorzScrollBar.Page'#3'k'#2#18'VertScrollBar.Page'#3#4#2#13
+  +'ActiveControl'#7#8'DataGrid'#14'AllowDropFiles'#9#11'BorderWidth'#2#2#7'Cap'
+  +'tion'#6#7'ezANOVA'#12'ClientHeight'#3#4#3#11'ClientWidth'#3#248#3#13'Design'
+  +'TimePPI'#3#144#0#4'Menu'#7#9'MainMenu1'#7'OnClose'#7#9'FormClose'#12'OnClos'
+  +'eQuery'#7#14'FormCloseQuery'#8'OnCreate'#7#10'FormCreate'#11'OnDropFiles'#7
+  +#13'FormDropFiles'#8'OnResize'#7#10'FormResize'#6'OnShow'#7#8'FormShow'#8'Po'
+  +'sition'#7#14'poScreenCenter'#10'LCLVersion'#6#7'2.0.0.2'#0#11'TStringGrid'#8
+  +'DataGrid'#4'Left'#2#2#6'Height'#3#175#2#3'Top'#2'/'#5'Width'#3#244#3#5'Alig'
+  +'n'#7#8'alClient'#15'DefaultColWidth'#2'Q'#9'FixedRows'#2#4#7'Options'#11#15
+  +'goFixedVertLine'#10'goVertLine'#10'goHorzLine'#13'goRangeSelect'#19'goDrawF'
+  +'ocusSelected'#6'goTabs'#15'goThumbTracking'#0#10'ParentFont'#8#8'RowCount'#2
+  +#12#8'TabOrder'#2#0#10'OnDrawCell'#7#16'DataGridDrawCell'#10'OnKeyPress'#7#16
+  +'DataGridKeyPress'#11'OnMouseDown'#7#17'DataGridMouseDown'#11'OnMouseMove'#7
+  +#17'DataGridMouseMove'#12'OnSelectCell'#7#18'DataGridSelectCell'#0#0#10'TSta'
+  +'tusBar'#10'StatusBar1'#4'Left'#2#2#6'Height'#2'$'#3'Top'#3#222#2#5'Width'#3
+  +#244#3#6'Panels'#14#1#5'Width'#3#225#0#0#1#5'Width'#2'K'#0#0#10'ParentFont'#8
+  +#11'SimplePanel'#8#0#0#6'TPanel'#9'ToolPanel'#4'Left'#2#2#6'Height'#2'-'#3'T'
+  +'op'#2#2#5'Width'#3#244#3#5'Align'#7#5'alTop'#8'AutoSize'#9#11'BorderWidth'#2
+  +#4#12'ClientHeight'#2'-'#11'ClientWidth'#3#244#3#10'ParentFont'#8#8'TabOrder'
+  +#2#2#0#7'TButton'#9'DesignBtn'#22'AnchorSideLeft.Control'#7#9'ToolPanel'#21
+  +'AnchorSideTop.Control'#7#9'ToolPanel'#4'Left'#2#5#6'Height'#2'#'#3'Top'#2#5
+  +#5'Width'#3'h'#1#8'AutoSize'#9#7'Caption'#6#6'Design'#20'Constraints.MinWidt'
+  +'h'#3'h'#1#7'OnClick'#7#14'DesignBtnClick'#10'ParentFont'#8#8'TabOrder'#2#0#0
+  +#0#7'TButton'#10'ResultsBtn'#22'AnchorSideLeft.Control'#7#9'DesignBtn'#19'An'
+  +'chorSideLeft.Side'#7#9'asrBottom'#21'AnchorSideTop.Control'#7#9'DesignBtn'
+  +#18'AnchorSideTop.Side'#7#9'asrCenter'#4'Left'#3's'#1#6'Height'#2'#'#3'Top'#2
+  +#5#5'Width'#2'R'#8'AutoSize'#9#18'BorderSpacing.Left'#2#6#7'Caption'#6#7'Res'
+  +'ults'#7'OnClick'#7#15'ResultsBtnClick'#10'ParentFont'#8#8'TabOrder'#2#1#0#0
+  +#7'TButton'#8'GraphBtn'#22'AnchorSideLeft.Control'#7#10'ResultsBtn'#19'Ancho'
+  +'rSideLeft.Side'#7#9'asrBottom'#21'AnchorSideTop.Control'#7#9'DesignBtn'#18
+  +'AnchorSideTop.Side'#7#9'asrCenter'#4'Left'#3#203#1#6'Height'#2'#'#3'Top'#2#5
+  +#5'Width'#2'T'#8'AutoSize'#9#18'BorderSpacing.Left'#2#6#7'Caption'#6#7' Grap'
+  +'h '#7'OnClick'#7#13'GraphBtnClick'#10'ParentFont'#8#8'TabOrder'#2#2#0#0#0#9
+  +'TMainMenu'#9'MainMenu1'#4'left'#3'R'#2#3'top'#3#4#2#0#9'TMenuItem'#9'AppleM'
+  +'enu'#7'Caption'#6#3#239#163#191#0#9'TMenuItem'#14'AppleAboutMenu'#7'Caption'
+  +#6#5'About'#7'OnClick'#7#13'HelpMenuClick'#0#0#0#9'TMenuItem'#8'FileMenu'#7
+  +'Caption'#6#5'&File'#0#9'TMenuItem'#4'New1'#7'Caption'#6#6'New...'#8'ShortCu'
+  +'t'#3'N@'#7'OnClick'#7#11'NewBtnClick'#0#0#9'TMenuItem'#5'Open1'#7'Caption'#6
+  +#7'Open...'#8'ShortCut'#3'O@'#7'OnClick'#7#12'OpenBtnClick'#0#0#9'TMenuItem'
+  +#5'Save1'#7'Caption'#6#4'Save'#8'ShortCut'#3'S@'#7'OnClick'#7#12'SaveBtnClic'
+  +'k'#0#0#9'TMenuItem'#5'Quit1'#7'Caption'#6#5'E&xit'#7'OnClick'#7#10'Quit1Cli'
+  +'ck'#0#0#0#9'TMenuItem'#5'Edit1'#7'Caption'#6#4'Edit'#0#9'TMenuItem'#5'Copy1'
+  +#7'Caption'#6#4'Copy'#8'ShortCut'#3'C@'#7'OnClick'#7#10'Copy1Click'#0#0#9'TM'
+  +'enuItem'#6'Paste1'#7'Caption'#6#5'Paste'#8'ShortCut'#3'V@'#7'OnClick'#7#11
+  +'Paste1Click'#0#0#9'TMenuItem'#10'Selectall1'#7'Caption'#6#16'Select all cel'
+  +'ls'#8'ShortCut'#3'A@'#7'OnClick'#7#15'Selectall1Click'#0#0#9'TMenuItem'#14
+  +'Clearallcells1'#7'Caption'#6#18'Clear all cells...'#7'OnClick'#7#19'Clearal'
+  +'lcells1Click'#0#0#0#9'TMenuItem'#8'ViewMenu'#7'Caption'#6#4'View'#0#9'TMenu'
+  +'Item'#8'FontMenu'#7'Caption'#6#4'Font'#7'OnClick'#7#12'FontBtnClick'#0#0#9
+  +'TMenuItem'#10'DesignMenu'#7'Caption'#6#6'Design'#8'ShortCut'#3'D@'#7'OnClic'
+  +'k'#7#14'DesignBtnClick'#0#0#9'TMenuItem'#11'ResultsMenu'#7'Caption'#6#7'Res'
+  +'ults'#8'ShortCut'#3'R@'#7'OnClick'#7#15'ResultsBtnClick'#0#0#9'TMenuItem'#9
+  +'GraphMenu'#7'Caption'#6#5'Graph'#8'ShortCut'#3'G@'#7'OnClick'#7#13'GraphBtn'
+  +'Click'#0#0#0#9'TMenuItem'#8'DataMenu'#7'Caption'#6#4'Data'#0#9'TMenuItem'#10
+  +'Transform1'#7'Caption'#6#9'Transform'#0#9'TMenuItem'#11'Reciprocal1'#3'Tag'
+  +#2#253#7'Caption'#6#11'-Reciprocal'#10'GroupIndex'#3#222#0#9'RadioItem'#9#7
+  +'OnClick'#7#13'TransformMenu'#0#0#9'TMenuItem'#4'Log1'#3'Tag'#2#254#7'Captio'
+  +'n'#6#4'-Log'#10'GroupIndex'#3#222#0#9'RadioItem'#9#7'OnClick'#7#13'Transfor'
+  +'mMenu'#0#0#9'TMenuItem'#3'Sq1'#3'Tag'#2#255#7'Caption'#6#5'-Sqrt'#10'GroupI'
+  +'ndex'#3#222#0#9'RadioItem'#9#7'OnClick'#7#13'TransformMenu'#0#0#9'TMenuItem'
+  +#5'None1'#7'Caption'#6#4'None'#7'Checked'#9#10'GroupIndex'#3#222#0#9'RadioIt'
+  +'em'#9#7'OnClick'#7#13'TransformMenu'#0#0#9'TMenuItem'#5'Sqrt1'#3'Tag'#2#1#7
+  +'Caption'#6#4'Sqrt'#10'GroupIndex'#3#222#0#9'RadioItem'#9#7'OnClick'#7#13'Tr'
+  ,'ansformMenu'#0#0#9'TMenuItem'#4'Log2'#3'Tag'#2#2#7'Caption'#6#3'Log'#10'Gro'
+  +'upIndex'#3#222#0#9'RadioItem'#9#7'OnClick'#7#13'TransformMenu'#0#0#9'TMenuI'
+  +'tem'#11'Reciprocal2'#3'Tag'#2#3#7'Caption'#6#10'Reciprocal'#10'GroupIndex'#3
+  +#222#0#9'RadioItem'#9#7'OnClick'#7#13'TransformMenu'#0#0#9'TMenuItem'#10'Arc'
+  +'SinMenu'#3'Tag'#2#4#7'Caption'#6'"Arcsin [for % data between 0..100]'#10'Gr'
+  +'oupIndex'#3#222#0#9'RadioItem'#9#7'OnClick'#7#13'TransformMenu'#0#0#0#0#9'T'
+  +'MenuItem'#5'Help1'#7'Caption'#6#5'&Help'#0#9'TMenuItem'#8'HelpMenu'#7'Capti'
+  +'on'#6#20'&About this software'#7'OnClick'#7#13'HelpMenuClick'#0#0#9'TMenuIt'
+  +'em'#29'AssociateezafileswithezANOVA1'#7'Caption'#6'"Associate *.eza files w'
+  +'ith ezANOVA'#7'OnClick'#7'"AssociateezafileswithezANOVA1Click'#0#0#0#0#11'T'
+  +'OpenDialog'#11'OpenDialog1'#10'DefaultExt'#6#4'.eza'#6'Filter'#6#146'Native'
+  +' [eza]|*.eza|Comma delimited text [csv]|*.csv|Tab delimited text [txt]|*.tx'
+  +'t|Native [eza] or text [csv, txt]|*.eza;*.csv;*.txt|All files|*.*'#4'left'#3
+  +#230#1#3'top'#3#4#2#0#0#11'TSaveDialog'#11'SaveDialog1'#10'DefaultExt'#6#4'.'
+  +'eza'#6'Filter'#6'YNative format [eza]|*.eza|Comma delimited text [csv]|*.cs'
+  +'v|Tab delimited text [txt]|*.txt'#7'Options'#11#17'ofOverwritePrompt'#14'of'
+  +'HideReadOnly'#0#4'left'#3#31#2#3'top'#3#4#2#0#0#0
+]);

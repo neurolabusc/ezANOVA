@@ -1,0 +1,279 @@
+object MainForm: TMainForm
+  Left = 519
+  Height = 802
+  Top = 122
+  Width = 1016
+  HorzScrollBar.Page = 619
+  VertScrollBar.Page = 516
+  ActiveControl = DataGrid
+  AllowDropFiles = True
+  BorderWidth = 2
+  Caption = 'ezANOVA'
+  ClientHeight = 772
+  ClientWidth = 1016
+  DesignTimePPI = 144
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDropFiles = FormDropFiles
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.2'
+  object DataGrid: TStringGrid
+    Left = 2
+    Height = 687
+    Top = 47
+    Width = 1012
+    Align = alClient
+    DefaultColWidth = 81
+    FixedRows = 4
+    Options = [goFixedVertLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goTabs, goThumbTracking]
+    ParentFont = False
+    RowCount = 12
+    TabOrder = 0
+    OnDrawCell = DataGridDrawCell
+    OnKeyPress = DataGridKeyPress
+    OnMouseDown = DataGridMouseDown
+    OnMouseMove = DataGridMouseMove
+    OnSelectCell = DataGridSelectCell
+  end
+  object StatusBar1: TStatusBar
+    Left = 2
+    Height = 36
+    Top = 734
+    Width = 1012
+    Panels = <    
+      item
+        Width = 225
+      end    
+      item
+        Width = 75
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object ToolPanel: TPanel
+    Left = 2
+    Height = 45
+    Top = 2
+    Width = 1012
+    Align = alTop
+    AutoSize = True
+    BorderWidth = 4
+    ClientHeight = 45
+    ClientWidth = 1012
+    ParentFont = False
+    TabOrder = 2
+    object DesignBtn: TButton
+      AnchorSideLeft.Control = ToolPanel
+      AnchorSideTop.Control = ToolPanel
+      Left = 5
+      Height = 35
+      Top = 5
+      Width = 360
+      AutoSize = True
+      Caption = 'Design'
+      Constraints.MinWidth = 360
+      OnClick = DesignBtnClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ResultsBtn: TButton
+      AnchorSideLeft.Control = DesignBtn
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = DesignBtn
+      AnchorSideTop.Side = asrCenter
+      Left = 371
+      Height = 35
+      Top = 5
+      Width = 82
+      AutoSize = True
+      BorderSpacing.Left = 6
+      Caption = 'Results'
+      OnClick = ResultsBtnClick
+      ParentFont = False
+      TabOrder = 1
+    end
+    object GraphBtn: TButton
+      AnchorSideLeft.Control = ResultsBtn
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = DesignBtn
+      AnchorSideTop.Side = asrCenter
+      Left = 459
+      Height = 35
+      Top = 5
+      Width = 84
+      AutoSize = True
+      BorderSpacing.Left = 6
+      Caption = ' Graph '
+      OnClick = GraphBtnClick
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object MainMenu1: TMainMenu
+    left = 594
+    top = 516
+    object AppleMenu: TMenuItem
+      Caption = ''
+      object AppleAboutMenu: TMenuItem
+        Caption = 'About'
+        OnClick = HelpMenuClick
+      end
+    end
+    object FileMenu: TMenuItem
+      Caption = '&File'
+      object New1: TMenuItem
+        Caption = 'New...'
+        ShortCut = 16462
+        OnClick = NewBtnClick
+      end
+      object Open1: TMenuItem
+        Caption = 'Open...'
+        ShortCut = 16463
+        OnClick = OpenBtnClick
+      end
+      object Save1: TMenuItem
+        Caption = 'Save'
+        ShortCut = 16467
+        OnClick = SaveBtnClick
+      end
+      object Quit1: TMenuItem
+        Caption = 'E&xit'
+        OnClick = Quit1Click
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = 'Edit'
+      object Copy1: TMenuItem
+        Caption = 'Copy'
+        ShortCut = 16451
+        OnClick = Copy1Click
+      end
+      object Paste1: TMenuItem
+        Caption = 'Paste'
+        ShortCut = 16470
+        OnClick = Paste1Click
+      end
+      object Selectall1: TMenuItem
+        Caption = 'Select all cells'
+        ShortCut = 16449
+        OnClick = Selectall1Click
+      end
+      object Clearallcells1: TMenuItem
+        Caption = 'Clear all cells...'
+        OnClick = Clearallcells1Click
+      end
+    end
+    object ViewMenu: TMenuItem
+      Caption = 'View'
+      object FontMenu: TMenuItem
+        Caption = 'Font'
+        OnClick = FontBtnClick
+      end
+      object DesignMenu: TMenuItem
+        Caption = 'Design'
+        ShortCut = 16452
+        OnClick = DesignBtnClick
+      end
+      object ResultsMenu: TMenuItem
+        Caption = 'Results'
+        ShortCut = 16466
+        OnClick = ResultsBtnClick
+      end
+      object GraphMenu: TMenuItem
+        Caption = 'Graph'
+        ShortCut = 16455
+        OnClick = GraphBtnClick
+      end
+    end
+    object DataMenu: TMenuItem
+      Caption = 'Data'
+      object Transform1: TMenuItem
+        Caption = 'Transform'
+        object Reciprocal1: TMenuItem
+          Tag = -3
+          Caption = '-Reciprocal'
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+        object Log1: TMenuItem
+          Tag = -2
+          Caption = '-Log'
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+        object Sq1: TMenuItem
+          Tag = -1
+          Caption = '-Sqrt'
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+        object None1: TMenuItem
+          Caption = 'None'
+          Checked = True
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+        object Sqrt1: TMenuItem
+          Tag = 1
+          Caption = 'Sqrt'
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+        object Log2: TMenuItem
+          Tag = 2
+          Caption = 'Log'
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+        object Reciprocal2: TMenuItem
+          Tag = 3
+          Caption = 'Reciprocal'
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+        object ArcSinMenu: TMenuItem
+          Tag = 4
+          Caption = 'Arcsin [for % data between 0..100]'
+          GroupIndex = 222
+          RadioItem = True
+          OnClick = TransformMenu
+        end
+      end
+    end
+    object Help1: TMenuItem
+      Caption = '&Help'
+      object HelpMenu: TMenuItem
+        Caption = '&About this software'
+        OnClick = HelpMenuClick
+      end
+      object AssociateezafileswithezANOVA1: TMenuItem
+        Caption = 'Associate *.eza files with ezANOVA'
+        OnClick = AssociateezafileswithezANOVA1Click
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.eza'
+    Filter = 'Native [eza]|*.eza|Comma delimited text [csv]|*.csv|Tab delimited text [txt]|*.txt|Native [eza] or text [csv, txt]|*.eza;*.csv;*.txt|All files|*.*'
+    left = 486
+    top = 516
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.eza'
+    Filter = 'Native format [eza]|*.eza|Comma delimited text [csv]|*.csv|Tab delimited text [txt]|*.txt'
+    Options = [ofOverwritePrompt, ofHideReadOnly]
+    left = 543
+    top = 516
+  end
+end
